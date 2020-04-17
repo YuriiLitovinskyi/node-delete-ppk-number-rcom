@@ -1,0 +1,15 @@
+{
+  "name": "delete-ppk-number-rcom",
+  "version": "1.0.0",
+  "description": "App to delete ppk from rcom MongoDB by number",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Yurii Litovinskyi",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "2.2.33",
+    "prompts": "^2.3.2"
+  }
+}
