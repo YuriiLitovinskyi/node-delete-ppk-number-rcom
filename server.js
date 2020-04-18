@@ -38,7 +38,8 @@ const deletePpk = (db, ppkNum) => {
     db.collection('ppkState', async (err, collection) => {
         if(err) {
             console.log(err);
-            await sleep(15000);
+            db.close();
+            await sleep(10000);
         };
 
         const ppkCount = await collection.find({ ppk_num: ppkNum }).count();
@@ -51,7 +52,8 @@ const deletePpk = (db, ppkNum) => {
             collection.remove({ ppk_num: ppkNum }, async (err, result) => {
                 if(err) {
                     console.log(err);
-                    await sleep(15000);
+                    db.close();
+                    await sleep(10000);
                 };
     
                 console.log(`ppk ${ppkNum} was removed from database successfully: ${result}`);
